@@ -2,11 +2,13 @@
 // You need to make the function load the content of that page into the "content" div on the index file
 async function loadPage(page) {
   // fetch the page, use await
-  const res;
+  console.log(location.hash);
+  const res = await fetch(page);
   // get text from res, use await
-  const content;
+  const content = await res.text();
   // get the element with id 'content'
-  const element;
+  const element = document.getElementById('content');
   // set innerHTML of the element
   // your code goes here
+  element.innerHTML = content;
 }
